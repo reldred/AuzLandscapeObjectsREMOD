@@ -1,0 +1,1441 @@
+/*
+ *  Copyright (C) 2021 GarryG
+ *  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+
+/*
+* GRF HEADER
+*/
+
+// define the newgrf
+grf {
+ grfid: "RJE\11";
+ name: string(STR_GRF_NAME);
+ desc: string(STR_GRF_DESCRIPTION);
+    url: string(STR_GRF_URL);
+ version: 3;
+ min_compatible_version: 1;
+
+}
+
+//include sprite templates
+
+template template_flat_high(x,y,filename) {
+    [x+14, y+2, 64, 94, -31, -63, filename]
+    [x+89, y+2, 64, 94, -31, -63, filename]
+    [x+164, y+2, 64, 94, -31, -63, filename]
+    [x+239, y+2, 64, 94, -31, -63, filename]
+}
+
+template template_overlaps(x,y,filename) {
+    [x+18, y+8, 130, 120, -64, -73, ANIM, filename]
+    [x+162, y+8, 130, 120, -64, -73, ANIM, filename]
+    [x+306, y+8, 130, 120, -64, -73, ANIM, filename]
+    [x+450, y+8, 130, 120, -64, -73, ANIM, filename]
+
+}
+
+ template template_normal_slope(x,y,filename) {
+    [x+14, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+89, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+164, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+239, y+2, 64, 44, -31, -13, ANIM, filename]
+}
+
+ template template_normal_slope_MASK(x,y,filename, mask) {
+    [x+14, y+2, 64, 44, -31, -13, ANIM, filename, mask]
+    [x+89, y+2, 64, 44, -31, -13, ANIM, filename, mask]
+    [x+164, y+2, 64, 44, -31, -13, ANIM, filename, mask]
+    [x+239, y+2, 64, 44, -31, -13, ANIM, filename, mask]
+}
+
+template template_flat_low(x,y,filename) {
+    [x+14, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+89, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+164, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+239, y+2, 64, 44, -31, -13, ANIM, filename]
+}
+
+template template_flat_low_MASK(x,y, filename, mask) {
+    [x+14, y+2, 64, 44, -31, -13, ANIM, filename, mask]
+    [x+89, y+2, 64, 44, -31, -13, ANIM, filename, mask]
+    [x+164, y+2, 64, 44, -31, -13, ANIM, filename, mask]
+    [x+239, y+2, 64, 44, -31, -13, ANIM, filename, mask]
+}
+
+template template_slopeobjects_purchase(x,y,filename) {
+    [x+5, y+5, 64, 50, -31, -19, ANIM, filename]
+    [x+85, y+5, 64, 50, -31, -19, ANIM, filename]
+    [x+165, y+5, 64, 50, -31, -19, ANIM, filename]
+    [x+245, y+5, 64, 50, -31, -19, ANIM, filename]
+	
+}
+
+ template template_building_slope(x,y,filename) {
+    [x+14, y+2, 64, 44, -31, -8, ANIM, filename]
+    [x+89, y+2, 64, 44, -31, -8, ANIM, filename]
+    [x+164, y+2, 64, 44, -31, -8, ANIM, filename]
+    [x+239, y+2, 64, 44, -31, -8, ANIM, filename]
+}
+
+template template_very_tall(x,y,filename) {
+    [x+14, y+2, 64, 244, -31, -213, ANIM, filename]
+    [x+89, y+2, 64, 244, -31, -213, ANIM, filename]
+    [x+164, y+2, 64, 244, -31, -213, ANIM, filename]
+    [x+239, y+2, 64, 244, -31, -213, ANIM, filename]
+}
+
+template template_very_tall_MASK(x,y,filename, mask) {
+    [x+14, y+2, 64, 244, -31, -213, ANIM, filename, mask]
+    [x+89, y+2, 64, 244, -31, -213, ANIM, filename, mask]
+    [x+164, y+2, 64, 244, -31, -213, ANIM, filename, mask]
+    [x+239, y+2, 64, 244, -31, -213, ANIM, filename, mask]
+}
+
+ template template_fence_slope(x,y,filename) {
+    [x+14, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+89, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+164, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+239, y+2, 64, 44, -31, -13, ANIM, filename]
+}
+
+template template_creek(x,y,filename) {
+    [x, y, 64, 44, -31, -13, ANIM, filename]
+    [x+75, y, 64, 44, -31, -13, ANIM, filename]
+    [x+150, y, 64, 44, -31, -13, ANIM, filename]
+    [x+225, y, 64, 44, -31, -13, ANIM, filename]
+}
+
+template template_prom_slope(x,y,filename) {
+    [x+14, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+89, y+2, 64, 44, -31, -18, ANIM, filename]
+    [x+164, y+2, 64, 44, -31, -18, ANIM, filename]
+    [x+239, y+2, 64, 44, -31, -13, ANIM, filename]
+}
+
+
+ template template_building_slopehigh(x,y,filename) {
+    [x+14, y+2, 64, 74, -31, -38, ANIM, filename]
+    [x+89, y+2, 64, 74, -31, -38, ANIM, filename]
+    [x+164, y+2, 64, 74, -31, -38, ANIM, filename]
+    [x+239, y+2, 64, 74, -31, -38, ANIM, filename]
+}
+
+ template template_waterfall_slope(x,y,filename) {
+    [x+14, y+2, 64, 74, -31, -38, ANIM, filename]
+    [x+89, y+2, 64, 74, -31, -38, ANIM, filename]
+    [x+164, y+2, 64, 74, -31, -38, ANIM, filename]
+    [x+239, y+2, 64, 74, -31, -38, ANIM, filename]
+}
+
+template template_building_low(x,y,filename) {
+    [x+14, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+89, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+164, y+2, 64, 44, -31, -13, ANIM, filename]
+    [x+239, y+2, 64, 44, -31, -13, ANIM, filename]
+}
+
+
+template template_footbridge(x,y,filename) {
+    [x+18, y+8, 130, 120, -64, -73, ANIM, filename]
+    [x+162, y+8, 130, 120, -64, -73, ANIM, filename]
+    [x+306, y+8, 130, 120, -64, -73, ANIM, filename]
+    [x+450, y+8, 130, 120, -64, -73, ANIM, filename]
+
+}
+
+template template_building_high(x,y,filename) {
+    [x+14, y+2, 64, 94, -31, -63, ANIM, filename]
+    [x+89, y+2, 64, 94, -31, -63, ANIM, filename]
+    [x+164, y+2, 64, 94, -31, -63, ANIM, filename]
+    [x+239, y+2, 64, 94, -31, -63, ANIM, filename]
+}
+
+template template_groundsprite(x,y,filename) {
+    [x, y, 64, 31, -31, 0, filename]
+}
+
+
+template template_purchase(x,y,filename) {
+    [x, y, 102, 46, -49, -11, filename]
+}
+
+
+template template_slopeaware(x,y,filename) {
+    [x+48, y+26, 64, 31, -31, 0, ANIM, filename]
+    [x+128, y+26, 64, 31, -31, 0, ANIM, filename]
+    [x+208, y+26, 64, 23, -31, 0, ANIM, filename]
+    [x+288, y+26, 64, 23, -31, 0, ANIM, filename]
+    [x+368, y+26, 64, 31, -31, 0, ANIM, filename]
+    [x+448, y+26, 64, 31, -31, 0, ANIM, filename]
+    [x+528, y+26, 64, 23, -31, 0, ANIM, filename]
+    [x+608, y+26, 64, 23, -31, 0, ANIM, filename]
+    [x+688, y+26, 64, 39, -31, -8, ANIM, filename]
+    [x+768, y+26, 64, 39, -31, -8, ANIM, filename]
+    [x+848, y+26, 64, 31, -31, -8, ANIM, filename]
+    [x+928, y+26, 64, 31, -31, -8, ANIM, filename]
+    [x+1008, y+26, 64, 39, -31, -8, ANIM, filename]
+    [x+1088, y+26, 64, 39, -31, -8, ANIM, filename]
+    [x+1168, y+26, 64, 31, -31, -8, ANIM, filename]
+    [x+1248, y+26, 64, 47, -31, -16, ANIM, filename]
+    [x+1328, y+26, 64, 15, -31, 0, ANIM, filename]
+    [x+1408, y+26, 64, 31, -31, -8, ANIM, filename]
+    [x+1488, y+26, 64, 31, -31, -8, ANIM, filename]
+	
+}
+
+template template_slopeawarehigh(x,y,filename) {
+    [x+16, y+8, 64, 83, -31, -52, ANIM, filename]
+    [x+96, y+8, 64, 83, -31, -52, ANIM, filename]
+    [x+176, y+8, 64, 75, -31, -52, ANIM, filename]
+    [x+256, y+8, 64, 75, -31, -52, ANIM, filename]
+    [x+336, y+8, 64, 83, -31, -52, ANIM, filename]
+    [x+416, y+8, 64, 83, -31, -52, ANIM, filename]
+    [x+496, y+8, 64, 75, -31, -52, ANIM, filename]
+    [x+576, y+8, 64, 75, -31, -52, ANIM, filename]
+    [x+656, y+8, 64, 91, -31, -60, ANIM, filename]
+    [x+736, y+8, 64, 91, -31, -60, ANIM, filename]
+    [x+816, y+8, 64, 83, -31, -60, ANIM, filename]
+    [x+896, y+8, 64, 83, -31, -60, ANIM, filename]
+    [x+976, y+8, 64, 91, -31, -60, ANIM, filename]
+    [x+1056, y+8, 64, 91, -31, -60, ANIM, filename]
+    [x+1136, y+8, 64, 83, -31, -60, ANIM, filename]
+    [x+1216, y+8, 64, 99, -31, -68, ANIM, filename]
+    [x+1296, y+8, 64, 75, -31, -52, ANIM, filename]
+    [x+1376, y+8, 64, 83, -31, -60, ANIM, filename]
+    [x+1456, y+8, 64, 83, -31, -60, ANIM, filename]
+	
+}
+
+template template_slopeaware_purchase(x,y,filename) {
+    [x+5, y+5, 64, 50, -31, -19, ANIM, filename]
+    [x+85, y+5, 64, 50, -31, -19, ANIM, filename]
+    [x+165, y+5, 64, 50, -31, -19, ANIM, filename]
+    [x+245, y+5, 64, 50, -31, -19, ANIM, filename]
+	
+}
+
+template template_building_extrahigh(x,y,filename) {
+    [x+14, y+2, 64, 104, -31, -73, filename]
+    [x+89, y+2, 64, 104, -31, -73, filename]
+    [x+164, y+2, 64, 104, -31, -73, filename]
+    [x+239, y+2, 64, 104, -31, -73, filename]
+}
+
+template template_talloverlaps(x,y,filename) {
+    [x+18, y+8, 130, 270, -64, -223, ANIM, filename]
+    [x+162, y+8, 130, 270, -64, -223, ANIM, filename]
+    [x+306, y+8, 130, 270, -64, -223, ANIM, filename]
+    [x+450, y+8, 130, 270, -64, -223, ANIM, filename]
+
+}
+
+/***************************************************
+                  CREEKS OBJECT MENU 
+****************************************************/
+
+/*
+ *  Copyright (C) 2021 GarryG
+ *  This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+ *  This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+ *  You should have received a copy of the GNU General Public License along with this program; if not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+*/
+/************************************************
+*************************************************
+                    START  TREES
+*************************************************
+*************************************************/
+
+switch (FEAT_OBJECTS, SELF, switch_object_auto_build_rules_near_water,
+			(nearby_tile_is_water( 1 , 1)) ||
+			(nearby_tile_is_water( 2 , 1)) ||
+			(nearby_tile_is_water( 3 , 1)) ||
+			(nearby_tile_is_water( 4 , 1)) ||
+			(nearby_tile_is_water( 5 , 1)) ||
+			(nearby_tile_is_water( 1 , 2)) ||
+			(nearby_tile_is_water( 2 , 2)) ||
+			(nearby_tile_is_water( 3 , 2)) ||
+			(nearby_tile_is_water( 4 , 2)) ||
+			(nearby_tile_is_water( 5 , 2)) ||
+			(nearby_tile_is_water( 1 , 3)) ||
+			(nearby_tile_is_water( 2 , 3)) ||
+			(nearby_tile_is_water( 3 , 3)) ||
+			(nearby_tile_is_water( 4 , 3)) ||
+			(nearby_tile_is_water( 5 , 3)) ||
+			(nearby_tile_is_water( 1 , 4)) ||
+			(nearby_tile_is_water( 2 , 4)) ||
+			(nearby_tile_is_water( 3 , 4)) ||
+			(nearby_tile_is_water( 4 , 4)) ||
+			(nearby_tile_is_water( 5 , 4)) ||
+			(nearby_tile_is_water( 1 , 5)) ||
+			(nearby_tile_is_water( 2 , 5)) ||
+			(nearby_tile_is_water( 3 , 5)) ||
+			(nearby_tile_is_water( 4 , 5)) ||
+			(nearby_tile_is_water( 5 , 5)) ||
+			(nearby_tile_is_water( -1 , 1)) ||
+			(nearby_tile_is_water( -2 , 1)) ||
+			(nearby_tile_is_water( -3 , 1)) ||
+			(nearby_tile_is_water( -4 , 1)) ||
+			(nearby_tile_is_water( -5 , 1)) ||
+			(nearby_tile_is_water( -1 , 2)) ||
+			(nearby_tile_is_water( -2 , 2)) ||
+			(nearby_tile_is_water( -3 , 2)) ||
+			(nearby_tile_is_water( -4 , 2)) ||
+			(nearby_tile_is_water( -5 , 2)) ||
+			(nearby_tile_is_water( -1 , 3)) ||
+			(nearby_tile_is_water( -2 , 3)) ||
+			(nearby_tile_is_water( -3 , 3)) ||
+			(nearby_tile_is_water( -4 , 3)) ||
+			(nearby_tile_is_water( -5 , 3)) ||
+			(nearby_tile_is_water( -1 , 4)) ||
+			(nearby_tile_is_water( -2 , 4)) ||
+			(nearby_tile_is_water( -3 , 4)) ||
+			(nearby_tile_is_water( -4 , 4)) ||
+			(nearby_tile_is_water( -5 , 4)) ||
+			(nearby_tile_is_water( -1 , 5)) ||
+			(nearby_tile_is_water( -2 , 5)) ||
+			(nearby_tile_is_water( -3 , 5)) ||
+			(nearby_tile_is_water( -4 , 5)) ||
+			(nearby_tile_is_water( -5 , 5)) ||
+			(nearby_tile_is_water( 1 , -1)) ||
+			(nearby_tile_is_water( 2 , -1)) ||
+			(nearby_tile_is_water( 3 , -1)) ||
+			(nearby_tile_is_water( 4 , -1)) ||
+			(nearby_tile_is_water( 5 , -1)) ||
+			(nearby_tile_is_water( 1 , -2)) ||
+			(nearby_tile_is_water( 2 , -2)) ||
+			(nearby_tile_is_water( 3 , -2)) ||
+			(nearby_tile_is_water( 4 , -2)) ||
+			(nearby_tile_is_water( 5 , -2)) ||
+			(nearby_tile_is_water( 1 , -3)) ||
+			(nearby_tile_is_water( 2 , -3)) ||
+			(nearby_tile_is_water( 3 , -3)) ||
+			(nearby_tile_is_water( 4 , -3)) ||
+			(nearby_tile_is_water( 5 , -3)) ||
+			(nearby_tile_is_water( 1 , -4)) ||
+			(nearby_tile_is_water( 2 , -4)) ||
+			(nearby_tile_is_water( 3 , -4)) ||
+			(nearby_tile_is_water( 4 , -4)) ||
+			(nearby_tile_is_water( 5 , -4)) ||
+			(nearby_tile_is_water( 1 , -5)) ||
+			(nearby_tile_is_water( 2 , -5)) ||
+			(nearby_tile_is_water( 3 , -5)) ||
+			(nearby_tile_is_water( 4 , -5)) ||
+			(nearby_tile_is_water( 5 , -5)) ||
+			(nearby_tile_is_water( -1 , -1)) ||
+			(nearby_tile_is_water( -2 , -1)) ||
+			(nearby_tile_is_water( -3 , -1)) ||
+			(nearby_tile_is_water( -4 , -1)) ||
+			(nearby_tile_is_water( -5 , -1)) ||
+			(nearby_tile_is_water( -1 , -2)) ||
+			(nearby_tile_is_water( -2 , -2)) ||
+			(nearby_tile_is_water( -3 , -2)) ||
+			(nearby_tile_is_water( -4 , -2)) ||
+			(nearby_tile_is_water( -5 , -2)) ||
+			(nearby_tile_is_water( -1 , -3)) ||
+			(nearby_tile_is_water( -2 , -3)) ||
+			(nearby_tile_is_water( -3 , -3)) ||
+			(nearby_tile_is_water( -4 , -3)) ||
+			(nearby_tile_is_water( -5 , -3)) ||
+			(nearby_tile_is_water( -1 , -4)) ||
+			(nearby_tile_is_water( -2 , -4)) ||
+			(nearby_tile_is_water( -3 , -4)) ||
+			(nearby_tile_is_water( -4 , -4)) ||
+			(nearby_tile_is_water( -5 , -4)) ||
+			(nearby_tile_is_water( -1 , -5)) ||
+			(nearby_tile_is_water( -2 , -5)) ||
+			(nearby_tile_is_water( -3 , -5)) ||
+			(nearby_tile_is_water( -4 , -5)) ||
+			(nearby_tile_is_water( -5 , -5))
+		) {
+	1: return CB_RESULT_LOCATION_ALLOW;
+	return CB_RESULT_LOCATION_DISALLOW;
+}
+
+switch (FEAT_OBJECTS, SELF, switch_object_auto_build_rules,
+			(terrain_type == TILETYPE_SNOW) ||
+			(terrain_type == TILETYPE_DESERT) ||
+			(nearby_tile_is_water( 0 , 0))
+		) {
+	1: return CB_RESULT_LOCATION_DISALLOW;
+	return switch_object_auto_build_rules_near_water;
+}
+
+switch (FEAT_OBJECTS, SELF, switch_object_auto_build_rules_no_slope,
+			(terrain_type == TILETYPE_SNOW) ||
+			(terrain_type == TILETYPE_DESERT) ||
+			(nearby_tile_slope( 0 , 0)) ||
+			(nearby_tile_is_water( 0 , 0))
+		) {
+	1: return CB_RESULT_LOCATION_DISALLOW;
+	return switch_object_auto_build_rules_near_water;
+}
+
+/********************************
+ SLOPE AWARE 1
+*********************************/
+
+//spritesets with 4 views, SNOW-version and the PURCHASE-menu
+spriteset (spriteset_scrub_001_a) {
+    template_slopeawarehigh(0,0,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_scrub_001_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,0,"gfx/scrub_32_001.png")
+}
+
+spriteset (spriteset_scrub_001_a_SNOW) {
+    template_slopeawarehigh(0,0,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_scrub_001_a_SNOW, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,0,"gfx/scrub_32_001_SNOW.png")
+}
+
+spriteset (spriteset_scrub_001_b) {
+    template_slopeawarehigh(0,140,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_scrub_001_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,140,"gfx/scrub_32_001.png")
+}
+
+spriteset (spriteset_scrub_001_b_SNOW) {
+    template_slopeawarehigh(0,140,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_scrub_001_b_SNOW, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,140,"gfx/scrub_32_001_SNOW.png")
+}
+
+spriteset (spriteset_scrub_001_c) {
+    template_slopeawarehigh(0,280,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_scrub_001_c, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,280,"gfx/scrub_32_001.png")
+}
+
+spriteset (spriteset_scrub_001_c_SNOW) {
+    template_slopeawarehigh(0,280,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_scrub_001_c_SNOW, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,280,"gfx/scrub_32_001_SNOW.png")
+}
+
+spriteset (spriteset_scrub_001_d) {
+    template_slopeawarehigh(0,420,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_scrub_001_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,420,"gfx/scrub_32_001.png")
+}
+
+spriteset (spriteset_scrub_001_d_SNOW) {
+    template_slopeawarehigh(0,420,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_scrub_001_d_SNOW, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,420,"gfx/scrub_32_001_SNOW.png")
+}
+
+spriteset (spriteset_scrub_001_PURCHASE) {
+    template_slopeaware_purchase(0,0,"gfx/slopeawarehigh_8_PURCHASE.png")
+}
+
+alternative_sprites (spriteset_scrub_001_PURCHASE, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeaware_purchase(0,0,"gfx/scrub_32_001_PURCHASE.png")
+}
+
+/* spritelayouts */
+
+//View_a
+
+
+spritelayout spritelayout_scrub_001_a {
+	ground {
+		// normal ground sprite - always draw
+		sprite: LOAD_TEMP(0) + LOAD_TEMP(1) + slope_to_sprite_offset(nearby_tile_slope(0, 0));
+	}
+
+	childsprite {
+		sprite: spriteset_scrub_001_a(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+	}
+
+    building {
+        sprite: spriteset_scrub_001_a(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) >= snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+        childsprite {
+                sprite: spriteset_scrub_001_a_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+                hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+    }
+
+    building {
+        sprite: spriteset_scrub_001_a_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+}
+
+//View_b
+
+
+spritelayout spritelayout_scrub_001_b {
+	ground {
+		// normal ground sprite - always draw
+		sprite: LOAD_TEMP(0) + LOAD_TEMP(1) + slope_to_sprite_offset(nearby_tile_slope(0, 0));
+	}
+
+	childsprite {
+		sprite: spriteset_scrub_001_b(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+}
+
+    building {
+        sprite: spriteset_scrub_001_b(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) >= snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+        childsprite {
+                sprite: spriteset_scrub_001_b_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+                hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+    }
+
+    building {
+        sprite: spriteset_scrub_001_b_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+}
+
+spritelayout spritelayout_scrub_001_c {
+	ground {
+		// normal ground sprite - always draw
+		sprite: LOAD_TEMP(0) + LOAD_TEMP(1) + slope_to_sprite_offset(nearby_tile_slope(0, 0));
+	}
+
+	childsprite {
+		sprite: spriteset_scrub_001_c(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+	}
+
+    building {
+        sprite: spriteset_scrub_001_c(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) >= snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+        childsprite {
+                sprite: spriteset_scrub_001_c_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+                hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+    }
+
+    building {
+        sprite: spriteset_scrub_001_c_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+
+}
+
+spritelayout spritelayout_scrub_001_d {
+	ground {
+		// normal ground sprite - always draw
+		sprite: LOAD_TEMP(0) + LOAD_TEMP(1) + slope_to_sprite_offset(nearby_tile_slope(0, 0));
+	}
+
+
+	childsprite {
+		sprite: spriteset_scrub_001_d(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+	}
+    building {
+        sprite: spriteset_scrub_001_d(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) >= snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+        childsprite {
+                sprite: spriteset_scrub_001_d_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+                hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+    }
+
+    building {
+        sprite: spriteset_scrub_001_d_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+
+}
+
+/********************************
+ SLOPE AWARE 2
+*********************************/
+
+//spritesets with 4 views, SNOW-version and the PURCHASE-menu
+spriteset (spriteset_skrub_002_a) {
+    template_slopeawarehigh(0,0,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_skrub_002_a, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,0,"gfx/skrub_32_002.png")
+}
+
+spriteset (spriteset_skrub_002_a_SNOW) {
+    template_slopeawarehigh(0,0,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_skrub_002_a_SNOW, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,0,"gfx/skrub_32_002_SNOW.png")
+}
+
+spriteset (spriteset_skrub_002_b) {
+    template_slopeawarehigh(0,140,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_skrub_002_b, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,140,"gfx/skrub_32_002.png")
+}
+
+spriteset (spriteset_skrub_002_b_SNOW) {
+    template_slopeawarehigh(0,140,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_skrub_002_b_SNOW, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,140,"gfx/skrub_32_002_SNOW.png")
+}
+
+spriteset (spriteset_skrub_002_c) {
+    template_slopeawarehigh(0,280,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_skrub_002_c, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,280,"gfx/skrub_32_002.png")
+}
+
+spriteset (spriteset_skrub_002_c_SNOW) {
+    template_slopeawarehigh(0,280,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_skrub_002_c_SNOW, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,280,"gfx/skrub_32_002_SNOW.png")
+}
+
+spriteset (spriteset_skrub_002_d) {
+    template_slopeawarehigh(0,420,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_skrub_002_d, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,420,"gfx/skrub_32_002.png")
+}
+
+spriteset (spriteset_skrub_002_d_SNOW) {
+    template_slopeawarehigh(0,420,"gfx/slopeawarehigh_8.png")
+}
+
+alternative_sprites (spriteset_skrub_002_d_SNOW, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeawarehigh(0,420,"gfx/skrub_32_002_SNOW.png")
+}
+
+spriteset (spriteset_skrub_002_PURCHASE) {
+    template_slopeaware_purchase(0,0,"gfx/slopeawarehigh_8_PURCHASE.png")
+}
+
+alternative_sprites (spriteset_skrub_002_PURCHASE, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_slopeaware_purchase(0,0,"gfx/skrub_32_002_PURCHASE.png")
+}
+
+/* spritelayouts */
+
+//View_a
+
+
+spritelayout spritelayout_skrub_002_a {
+	ground {
+		// normal ground sprite - always draw
+		sprite: LOAD_TEMP(0) + LOAD_TEMP(1) + slope_to_sprite_offset(nearby_tile_slope(0, 0));
+	}
+
+	childsprite {
+		sprite: spriteset_skrub_002_a(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+	}
+
+    building {
+        sprite: spriteset_skrub_002_a(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) >= snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+        childsprite {
+                sprite: spriteset_skrub_002_a_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+                hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+    }
+
+    building {
+        sprite: spriteset_skrub_002_a_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+}
+
+//View_b
+
+
+spritelayout spritelayout_skrub_002_b {
+	ground {
+		// normal ground sprite - always draw
+		sprite: LOAD_TEMP(0) + LOAD_TEMP(1) + slope_to_sprite_offset(nearby_tile_slope(0, 0));
+	}
+
+	childsprite {
+		sprite: spriteset_skrub_002_b(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+}
+
+    building {
+        sprite: spriteset_skrub_002_b(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) >= snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+        childsprite {
+                sprite: spriteset_skrub_002_b_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+                hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+    }
+
+    building {
+        sprite: spriteset_skrub_002_b_SNOW(slope_to_sprite_offset(nearby_tile_slope(0, 0)));
+        hide_sprite: nearby_tile_height(0, 0) < snowline_height;
+        xoffset: 0; //from NE edge
+        yoffset: 0; //from NW edge
+        zoffset: 0;
+        xextent: 16;
+        yextent: 16;
+        zextent: 8;
+    }
+
+}
+
+//randomize
+random_switch (FEAT_OBJECTS, SELF, switch_scrub_002_random) {
+    1: spritelayout_scrub_001_a;
+    1: spritelayout_scrub_001_b;
+    1: spritelayout_scrub_001_c;
+    1: spritelayout_scrub_001_d;
+    1: spritelayout_skrub_002_a;
+    1: spritelayout_skrub_002_b;
+}
+
+//decide spritelayout for each of the view
+switch (FEAT_OBJECTS, SELF, switch_skrub_002_view, view) {
+    switch_scrub_002_random;
+}
+
+//calculate ground sprite for object
+switch (FEAT_OBJECTS, SELF, switch_skrub_002_object, [
+    STORE_TEMP(GROUNDSPRITE_NORMAL, 1),
+    STORE_TEMP( (nearby_tile_terrain_type(0,0) == TILETYPE_DESERT) * GROUNDSPRITE_DESERT, 1),
+    STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * 4512 * (nearby_tile_terrain_type( 1, 0) == TILETYPE_DESERT), 1),
+    STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * 4512 * (nearby_tile_terrain_type(-1, 0) == TILETYPE_DESERT), 1),
+    STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * 4512 * (nearby_tile_terrain_type( 0, 1) == TILETYPE_DESERT), 1),
+    STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * 4512 * (nearby_tile_terrain_type( 0,-1) == TILETYPE_DESERT), 1),
+    STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * GROUNDSPRITE_NORMAL, 1),
+    STORE_TEMP(terrain_type == TILETYPE_SNOW   ? GROUNDSPRITE_SNOW : LOAD_TEMP(1), 1),
+    STORE_TEMP(snowline_height == 0xFF ? 0xFF : nearby_tile_height(0,0) - snowline_height, 255),
+    STORE_TEMP((LOAD_TEMP(255) == -1) ? GROUNDSPRITE_SNOW_1_4 : LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(255) ==  0) ? GROUNDSPRITE_SNOW_2_4 : LOAD_TEMP(1), 1),
+    STORE_TEMP((LOAD_TEMP(255) ==  1) ? GROUNDSPRITE_SNOW_3_4 : LOAD_TEMP(1), 1)
+        ]) {
+    switch_skrub_002_view;
+}
+
+
+spritelayout spritelayout_skrub_002_1_purchase {
+	ground {
+        sprite: GROUNDSPRITE_NORMAL;
+	}
+	building {
+		sprite: spriteset_skrub_002_PURCHASE(0);
+	}
+}
+
+//calculate ground sprite for purchase menu
+switch (FEAT_OBJECTS, SELF, switch_skrub_002_purchase, view) {
+    spritelayout_skrub_002_1_purchase;
+}
+
+
+item (FEAT_OBJECTS, skrub_002, 20) {
+    property {
+        class: "FRST";
+        classname: string(STR_FRST);
+        name: string(STR_skrub_002);
+        climates_available: ALL_CLIMATES;
+        size: [1,1];
+        build_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date: 0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+        height: 0;
+        num_views: 1;
+	count_per_map256: 255;
+     }
+    graphics {
+        default: switch_skrub_002_object;
+        purchase: switch_skrub_002_purchase;
+        tile_check: switch_object_auto_build_rules;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+
+
+     }
+}
+
+item (FEAT_OBJECTS, skrub_002_1, 21) {
+    property {
+        class: "FRST";
+        classname: string(STR_FRST);
+        name: string(STR_skrub_002);
+        climates_available: ALL_CLIMATES;
+        size: [1,2];
+        build_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date: 0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+        height: 0;
+        num_views: 1;
+	count_per_map256: 255;
+     }
+    graphics {
+        default: switch_skrub_002_object;
+        purchase: switch_skrub_002_purchase;
+        tile_check: switch_object_auto_build_rules;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+
+
+     }
+}
+
+item (FEAT_OBJECTS, skrub_002_2, 22) {
+    property {
+        class: "FRST";
+        classname: string(STR_FRST);
+        name: string(STR_skrub_002);
+        climates_available: ALL_CLIMATES;
+        size: [2,1];
+        build_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date: 0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+        height: 0;
+        num_views: 1;
+	count_per_map256: 255;
+     }
+    graphics {
+        default: switch_skrub_002_object;
+        purchase: switch_skrub_002_purchase;
+        tile_check: switch_object_auto_build_rules;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+
+
+     }
+}
+
+item (FEAT_OBJECTS, skrub_002_3, 23) {
+    property {
+        class: "FRST";
+        classname: string(STR_FRST);
+        name: string(STR_skrub_002);
+        climates_available: ALL_CLIMATES;
+        size: [1,3];
+        build_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date: 0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+        height: 0;
+        num_views: 1;
+	count_per_map256: 255;
+     }
+    graphics {
+        default: switch_skrub_002_object;
+        purchase: switch_skrub_002_purchase;
+        tile_check: switch_object_auto_build_rules;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+
+
+     }
+}
+
+item (FEAT_OBJECTS, skrub_002_4, 24) {
+    property {
+        class: "FRST";
+        classname: string(STR_FRST);
+        name: string(STR_skrub_002);
+        climates_available: ALL_CLIMATES;
+        size: [3,1];
+        build_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date: 0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+        height: 0;
+        num_views: 1;
+	count_per_map256: 255;
+     }
+    graphics {
+        default: switch_skrub_002_object;
+        purchase: switch_skrub_002_purchase;
+        tile_check: switch_object_auto_build_rules;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+
+
+     }
+}
+
+item (FEAT_OBJECTS, skrub_002_5, 25) {
+    property {
+        class: "FRST";
+        classname: string(STR_FRST);
+        name: string(STR_skrub_002);
+        climates_available: ALL_CLIMATES;
+        size: [2,2];
+        build_cost_multiplier: 0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date: 0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+        height: 0;
+        num_views: 1;
+	count_per_map256: 255;
+     }
+    graphics {
+        default: switch_skrub_002_object;
+        purchase: switch_skrub_002_purchase;
+        tile_check: switch_object_auto_build_rules;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+
+
+     }
+}
+
+/****************************************************
+Start palmtrees
+****************************************************/
+
+//TEMPLATES & SPRITESETS//
+template template_palmtrees(x,y,filename) {
+    [x,		y,      64,     120,     -31,    -89,   filename]
+}
+
+template template_palmtrees_purchase(x,y,filename) {
+
+    [x, y, 64, 100, -31, -69, filename]
+    [x+70, y, 64, 100, -31, -69, filename]
+    [x+140, y, 64, 100, -31, -69, filename]
+    [x+210, y, 64, 100, -31, -69, filename]
+
+}
+
+//3RD ROW SE + SNOW//
+spriteset (spriteset_palmtrees_3) {
+    	template_palmtrees(0,252,"gfx/taller_8.png")
+	template_palmtrees(70,252,"gfx/taller_8.png")
+	template_palmtrees(140,252,"gfx/taller_8.png")
+	template_palmtrees(210,252,"gfx/taller_8.png")
+	template_palmtrees(280,252,"gfx/taller_8.png")
+	template_palmtrees(350,252,"gfx/taller_8.png")
+	template_palmtrees(420,252,"gfx/taller_8.png")
+	template_palmtrees(490,252,"gfx/taller_8.png")
+	template_palmtrees(560,252,"gfx/taller_8.png")
+    	template_palmtrees(0,378,"gfx/taller_8.png")
+	template_palmtrees(70,378,"gfx/taller_8.png")
+	template_palmtrees(140,378,"gfx/taller_8.png")
+	template_palmtrees(210,378,"gfx/taller_8.png")	
+	template_palmtrees(280,378,"gfx/taller_8.png")
+	template_palmtrees(350,378,"gfx/taller_8.png")
+	template_palmtrees(420,378,"gfx/taller_8.png")
+	template_palmtrees(490,378,"gfx/taller_8.png")
+	template_palmtrees(560,378,"gfx/taller_8.png")
+}
+
+alternative_sprites (spriteset_palmtrees_3, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    	template_palmtrees(0,252,"gfx/palmtrees_32.png")
+	template_palmtrees(70,252,"gfx/palmtrees_32.png")
+	template_palmtrees(140,252,"gfx/palmtrees_32.png")
+	template_palmtrees(210,252,"gfx/palmtrees_32.png")
+	template_palmtrees(280,252,"gfx/palmtrees_32.png")
+	template_palmtrees(350,252,"gfx/palmtrees_32.png")
+	template_palmtrees(420,252,"gfx/palmtrees_32.png")
+	template_palmtrees(490,252,"gfx/palmtrees_32.png")
+	template_palmtrees(560,252,"gfx/palmtrees_32.png")
+    	template_palmtrees(0,378,"gfx/palmtrees_32.png")
+	template_palmtrees(70,378,"gfx/palmtrees_32.png")
+	template_palmtrees(140,378,"gfx/palmtrees_32.png")
+	template_palmtrees(210,378,"gfx/palmtrees_32.png")	
+	template_palmtrees(280,378,"gfx/palmtrees_32.png")
+	template_palmtrees(350,378,"gfx/palmtrees_32.png")
+	template_palmtrees(420,378,"gfx/palmtrees_32.png")
+	template_palmtrees(490,378,"gfx/palmtrees_32.png")
+	template_palmtrees(560,378,"gfx/palmtrees_32.png")
+}
+
+
+spriteset (spriteset_palmtrees_3_snow) {
+    	template_palmtrees(0,252,"gfx/taller_8.png")
+	template_palmtrees(70,252,"gfx/taller_8.png")
+	template_palmtrees(140,252,"gfx/taller_8.png")
+	template_palmtrees(210,252,"gfx/taller_8.png")
+	template_palmtrees(280,252,"gfx/taller_8.png")
+	template_palmtrees(350,252,"gfx/taller_8.png")
+	template_palmtrees(420,252,"gfx/taller_8.png")
+	template_palmtrees(490,252,"gfx/taller_8.png")
+	template_palmtrees(560,252,"gfx/taller_8.png")
+    	template_palmtrees(0,378,"gfx/taller_8.png")
+	template_palmtrees(70,378,"gfx/taller_8.png")
+	template_palmtrees(140,378,"gfx/taller_8.png")
+	template_palmtrees(210,378,"gfx/taller_8.png")	
+	template_palmtrees(280,378,"gfx/taller_8.png")
+	template_palmtrees(350,378,"gfx/taller_8.png")
+	template_palmtrees(420,378,"gfx/taller_8.png")
+	template_palmtrees(490,378,"gfx/taller_8.png")
+	template_palmtrees(560,378,"gfx/taller_8.png")
+}
+
+
+alternative_sprites (spriteset_palmtrees_3_snow, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    	template_palmtrees(0,252,"gfx/palmtrees_32.png")
+	template_palmtrees(70,252,"gfx/palmtrees_32.png")
+	template_palmtrees(140,252,"gfx/palmtrees_32.png")
+	template_palmtrees(210,252,"gfx/palmtrees_32.png")
+	template_palmtrees(280,252,"gfx/palmtrees_32.png")
+	template_palmtrees(350,252,"gfx/palmtrees_32.png")
+	template_palmtrees(420,252,"gfx/palmtrees_32.png")
+	template_palmtrees(490,252,"gfx/palmtrees_32.png")
+	template_palmtrees(560,252,"gfx/palmtrees_32.png")
+    	template_palmtrees(0,378,"gfx/palmtrees_32.png")
+	template_palmtrees(70,378,"gfx/palmtrees_32.png")
+	template_palmtrees(140,378,"gfx/palmtrees_32.png")
+	template_palmtrees(210,378,"gfx/palmtrees_32.png")	
+	template_palmtrees(280,378,"gfx/palmtrees_32.png")
+	template_palmtrees(350,378,"gfx/palmtrees_32.png")
+	template_palmtrees(420,378,"gfx/palmtrees_32.png")
+	template_palmtrees(490,378,"gfx/palmtrees_32.png")
+	template_palmtrees(560,378,"gfx/palmtrees_32.png")
+}
+
+
+//4TH ROW + SNOW//
+spriteset (spriteset_palmtrees_4) {
+    	template_palmtrees(0,252,"gfx/taller_8.png")
+	template_palmtrees(70,252,"gfx/taller_8.png")
+	template_palmtrees(140,252,"gfx/taller_8.png")
+	template_palmtrees(210,252,"gfx/taller_8.png")
+	template_palmtrees(280,252,"gfx/taller_8.png")
+	template_palmtrees(350,252,"gfx/taller_8.png")
+	template_palmtrees(420,252,"gfx/taller_8.png")
+	template_palmtrees(490,252,"gfx/taller_8.png")
+	template_palmtrees(560,252,"gfx/taller_8.png")
+    	template_palmtrees(0,378,"gfx/taller_8.png")
+	template_palmtrees(70,378,"gfx/taller_8.png")
+	template_palmtrees(140,378,"gfx/taller_8.png")
+	template_palmtrees(210,378,"gfx/taller_8.png")	
+	template_palmtrees(280,378,"gfx/taller_8.png")
+	template_palmtrees(350,378,"gfx/taller_8.png")
+	template_palmtrees(420,378,"gfx/taller_8.png")
+	template_palmtrees(490,378,"gfx/taller_8.png")
+	template_palmtrees(560,378,"gfx/taller_8.png")
+}
+
+alternative_sprites (spriteset_palmtrees_4, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    	template_palmtrees(0,252,"gfx/palmtrees_32.png")
+	template_palmtrees(70,252,"gfx/palmtrees_32.png")
+	template_palmtrees(140,252,"gfx/palmtrees_32.png")
+	template_palmtrees(210,252,"gfx/palmtrees_32.png")
+	template_palmtrees(280,252,"gfx/palmtrees_32.png")
+	template_palmtrees(350,252,"gfx/palmtrees_32.png")
+	template_palmtrees(420,252,"gfx/palmtrees_32.png")
+	template_palmtrees(490,252,"gfx/palmtrees_32.png")
+	template_palmtrees(560,252,"gfx/palmtrees_32.png")
+    	template_palmtrees(0,378,"gfx/palmtrees_32.png")
+	template_palmtrees(70,378,"gfx/palmtrees_32.png")
+	template_palmtrees(140,378,"gfx/palmtrees_32.png")
+	template_palmtrees(210,378,"gfx/palmtrees_32.png")	
+	template_palmtrees(280,378,"gfx/palmtrees_32.png")
+	template_palmtrees(350,378,"gfx/palmtrees_32.png")
+	template_palmtrees(420,378,"gfx/palmtrees_32.png")
+	template_palmtrees(490,378,"gfx/palmtrees_32.png")
+	template_palmtrees(560,378,"gfx/palmtrees_32.png")
+}
+
+spriteset (spriteset_palmtrees_4_snow) {
+    	template_palmtrees(0,252,"gfx/taller_8.png")
+	template_palmtrees(70,252,"gfx/taller_8.png")
+	template_palmtrees(140,252,"gfx/taller_8.png")
+	template_palmtrees(210,252,"gfx/taller_8.png")
+	template_palmtrees(280,252,"gfx/taller_8.png")
+	template_palmtrees(350,252,"gfx/taller_8.png")
+	template_palmtrees(420,252,"gfx/taller_8.png")
+	template_palmtrees(490,252,"gfx/taller_8.png")
+	template_palmtrees(560,252,"gfx/taller_8.png")
+    	template_palmtrees(0,378,"gfx/taller_8.png")
+	template_palmtrees(70,378,"gfx/taller_8.png")
+	template_palmtrees(140,378,"gfx/taller_8.png")
+	template_palmtrees(210,378,"gfx/taller_8.png")	
+	template_palmtrees(280,378,"gfx/taller_8.png")
+	template_palmtrees(350,378,"gfx/taller_8.png")
+	template_palmtrees(420,378,"gfx/taller_8.png")
+	template_palmtrees(490,378,"gfx/taller_8.png")
+	template_palmtrees(560,378,"gfx/taller_8.png")
+}
+
+alternative_sprites (spriteset_palmtrees_4_snow, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    	template_palmtrees(0,252,"gfx/palmtrees_32.png")
+	template_palmtrees(70,252,"gfx/palmtrees_32.png")
+	template_palmtrees(140,252,"gfx/palmtrees_32.png")
+	template_palmtrees(210,252,"gfx/palmtrees_32.png")
+	template_palmtrees(280,252,"gfx/palmtrees_32.png")
+	template_palmtrees(350,252,"gfx/palmtrees_32.png")
+	template_palmtrees(420,252,"gfx/palmtrees_32.png")
+	template_palmtrees(490,252,"gfx/palmtrees_32.png")
+	template_palmtrees(560,252,"gfx/palmtrees_32.png")
+    	template_palmtrees(0,378,"gfx/palmtrees_32.png")
+	template_palmtrees(70,378,"gfx/palmtrees_32.png")
+	template_palmtrees(140,378,"gfx/palmtrees_32.png")
+	template_palmtrees(210,378,"gfx/palmtrees_32.png")	
+	template_palmtrees(280,378,"gfx/palmtrees_32.png")
+	template_palmtrees(350,378,"gfx/palmtrees_32.png")
+	template_palmtrees(420,378,"gfx/palmtrees_32.png")
+	template_palmtrees(490,378,"gfx/palmtrees_32.png")
+	template_palmtrees(560,378,"gfx/palmtrees_32.png")
+}
+
+spriteset (spriteset_palmtrees_PURCHASE) {
+    template_palmtrees_purchase(0,0,"gfx/taller_8_PURCHASE.png")
+}
+
+alternative_sprites (spriteset_palmtrees_PURCHASE, ZOOM_LEVEL_NORMAL, BIT_DEPTH_32BPP, "") {
+    template_palmtrees_purchase(0,0,"gfx/palmtrees_32_PURCHASE.png")
+}
+
+
+//OBJECT 1 SIMPLE palmtrees//
+//SPRITELAYOUTS//
+
+//OBJECT 2 SIMPLE palmtrees//
+//palmtrees LOT NE + PURCHASE//
+spritelayout spritelayout_palmtrees_03 {
+    ground {
+        sprite: LOAD_TEMP(0) + LOAD_TEMP(1);
+	}
+
+	building {
+        sprite: spriteset_palmtrees_3((animation_frame + nearby_tile_random_bits(0,0)) % 18);
+		xextent: 16;
+		yextent: 16;
+		zextent: 10;
+		hide_sprite: (terrain_type == TILETYPE_SNOW);
+    }
+	building {
+        sprite: spriteset_palmtrees_3_snow((animation_frame + nearby_tile_random_bits(0,0)) % 18);
+		xextent: 16;
+		yextent: 16;
+		zextent: 10;
+		hide_sprite: (terrain_type != TILETYPE_SNOW);
+    }
+
+}
+spritelayout spritelayout_palmtrees_03_purchase {
+    ground {
+        sprite: GROUNDSPRITE_NORMAL;
+	}
+
+	building {
+        sprite: spriteset_palmtrees_PURCHASE(2);
+		xextent: 16;
+		yextent: 16;
+		zextent: 10;
+    }
+
+}
+
+//decide spritelayout for each of the 4 views
+switch (FEAT_OBJECTS, SELF, switch_palmtrees_1_view, view) {
+    spritelayout_palmtrees_03;
+}
+
+//calculate ground sprite for object
+switch (FEAT_OBJECTS, SELF, switch_palmtrees_1_object, [
+        //tile slope offset in storage register 0
+        STORE_TEMP(slope_to_sprite_offset(tile_slope), 0),
+        //terrain type in storage register 1
+        STORE_TEMP(GROUNDSPRITE_NORMAL, 1),
+		STORE_TEMP( (nearby_tile_terrain_type(0,0) == TILETYPE_DESERT) * GROUNDSPRITE_DESERT, 1),
+		STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * 4512 * (nearby_tile_terrain_type( 1, 0) == TILETYPE_DESERT), 1),
+		STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * 4512 * (nearby_tile_terrain_type(-1, 0) == TILETYPE_DESERT), 1),
+		STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * 4512 * (nearby_tile_terrain_type( 0, 1) == TILETYPE_DESERT), 1),
+		STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * 4512 * (nearby_tile_terrain_type( 0,-1) == TILETYPE_DESERT), 1),
+		STORE_TEMP( LOAD_TEMP(1) + (LOAD_TEMP(1) == 0) * GROUNDSPRITE_NORMAL, 1),
+		STORE_TEMP(terrain_type == TILETYPE_SNOW   ? GROUNDSPRITE_SNOW : LOAD_TEMP(1), 1),
+		STORE_TEMP(snowline_height == 0xFF ? 0xFF : nearby_tile_height(0,0) - snowline_height, 255),
+		STORE_TEMP((LOAD_TEMP(255) == -1) ? GROUNDSPRITE_SNOW_1_4 : LOAD_TEMP(1), 1),
+		STORE_TEMP((LOAD_TEMP(255) ==  0) ? GROUNDSPRITE_SNOW_2_4 : LOAD_TEMP(1), 1),
+		STORE_TEMP((LOAD_TEMP(255) ==  1) ? GROUNDSPRITE_SNOW_3_4 : LOAD_TEMP(1), 1)
+        ]) {
+    switch_palmtrees_1_view;
+}
+
+//decide spritelayout for the purchase menu
+switch (FEAT_OBJECTS, SELF, switch_palmtrees_1_purchase, view) {
+    spritelayout_palmtrees_03_purchase;
+}
+
+
+item (FEAT_OBJECTS, item_palmtrees_1, 030) {
+    property {
+        class:                  "FRST";
+	classname:		string(STR_FRST);
+        name:                   string(STR_palmtrees_1);
+        climates_available:     ALL_CLIMATES;
+        size:                   [1,1];
+        build_cost_multiplier:  0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date:       0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+//	animation_info:			[ANIMATION_LOOPING, 9];
+//	animation_speed:		7;
+//	animation_triggers:		3;
+        height:                 1;
+        num_views:              1;
+	count_per_map256: 255;
+    }
+    graphics {
+        default:            switch_palmtrees_1_object;
+        purchase:           switch_palmtrees_1_purchase;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+        tile_check: switch_object_auto_build_rules_no_slope;
+
+	anim_control:    	return CB_RESULT_NEXT_FRAME;
+	anim_next_frame: 	return CB_RESULT_NEXT_FRAME;
+    }
+}
+
+item (FEAT_OBJECTS, item_palmtrees_1_1, 031) {
+    property {
+        class:                  "FRST";
+	classname:		string(STR_FRST);
+        name:                   string(STR_palmtrees_1);
+        climates_available:     ALL_CLIMATES;
+        size:                   [1,2];
+        build_cost_multiplier:  0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date:       0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+//	animation_info:			[ANIMATION_LOOPING, 9];
+//	animation_speed:		7;
+//	animation_triggers:		3;
+        height:                 1;
+        num_views:              1;
+	count_per_map256: 255;
+    }
+    graphics {
+        default:            switch_palmtrees_1_object;
+        purchase:           switch_palmtrees_1_purchase;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+        tile_check: switch_object_auto_build_rules_no_slope;
+
+	anim_control:    	return CB_RESULT_NEXT_FRAME;
+	anim_next_frame: 	return CB_RESULT_NEXT_FRAME;
+    }
+}
+
+item (FEAT_OBJECTS, item_palmtrees_1_2, 032) {
+    property {
+        class:                  "FRST";
+	classname:		string(STR_FRST);
+        name:                   string(STR_palmtrees_1);
+        climates_available:     ALL_CLIMATES;
+        size:                   [3,1];
+        build_cost_multiplier:  0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date:       0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+//	animation_info:			[ANIMATION_LOOPING, 9];
+//	animation_speed:		7;
+//	animation_triggers:		3;
+        height:                 1;
+        num_views:              1;
+	count_per_map256: 255;
+    }
+    graphics {
+        default:            switch_palmtrees_1_object;
+        purchase:           switch_palmtrees_1_purchase;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+        tile_check: switch_object_auto_build_rules;
+
+	anim_control:    	return CB_RESULT_NEXT_FRAME;
+	anim_next_frame: 	return CB_RESULT_NEXT_FRAME;
+    }
+}
+
+item (FEAT_OBJECTS, item_palmtrees_1_3, 033) {
+    property {
+        class:                  "FRST";
+	classname:		string(STR_FRST);
+        name:                   string(STR_palmtrees_1);
+        climates_available:     ALL_CLIMATES;
+        size:                   [1,3];
+        build_cost_multiplier:  0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date:       0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+//	animation_info:			[ANIMATION_LOOPING, 9];
+//	animation_speed:		7;
+//	animation_triggers:		3;
+        height:                 1;
+        num_views:              1;
+	count_per_map256: 255;
+    }
+    graphics {
+        default:            switch_palmtrees_1_object;
+        purchase:           switch_palmtrees_1_purchase;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+        tile_check: switch_object_auto_build_rules_no_slope;
+
+	anim_control:    	return CB_RESULT_NEXT_FRAME;
+	anim_next_frame: 	return CB_RESULT_NEXT_FRAME;
+    }
+}
+
+item (FEAT_OBJECTS, item_palmtrees_1_4, 034) {
+    property {
+        class:                  "FRST";
+	classname:		string(STR_FRST);
+        name:                   string(STR_palmtrees_1);
+        climates_available:     ALL_CLIMATES;
+        size:                   [3,1];
+        build_cost_multiplier:  0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date:       0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+//	animation_info:			[ANIMATION_LOOPING, 9];
+//	animation_speed:		7;
+//	animation_triggers:		3;
+        height:                 1;
+        num_views:              1;
+	count_per_map256: 255;
+    }
+    graphics {
+        default:            switch_palmtrees_1_object;
+        purchase:           switch_palmtrees_1_purchase;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+        tile_check: switch_object_auto_build_rules_no_slope;
+
+	anim_control:    	return CB_RESULT_NEXT_FRAME;
+	anim_next_frame: 	return CB_RESULT_NEXT_FRAME;
+    }
+}
+
+item (FEAT_OBJECTS, item_palmtrees_1_5, 035) {
+    property {
+        class:                  "FRST";
+	classname:		string(STR_FRST);
+        name:                   string(STR_palmtrees_1);
+        climates_available:     ALL_CLIMATES;
+        size:                   [2,2];
+        build_cost_multiplier:  0;
+        remove_cost_multiplier: 0;
+        introduction_date:      date(1111,1,1);
+        end_of_life_date:       0xFFFFFFFF;
+object_flags: bitmask(OBJ_FLAG_ANYTHING_REMOVE, OBJ_FLAG_NO_FOUNDATIONS, OBJ_FLAG_ALLOW_BRIDGE, OBJ_FLAG_ONLY_SE);
+//	animation_info:			[ANIMATION_LOOPING, 9];
+//	animation_speed:		7;
+//	animation_triggers:		3;
+        height:                 1;
+        num_views:              1;
+	count_per_map256: 255;
+    }
+    graphics {
+        default:            switch_palmtrees_1_object;
+        purchase:           switch_palmtrees_1_purchase;
+        autoslope:          return CB_RESULT_AUTOSLOPE;
+        tile_check: switch_object_auto_build_rules_no_slope;
+
+	anim_control:    	return CB_RESULT_NEXT_FRAME;
+	anim_next_frame: 	return CB_RESULT_NEXT_FRAME;
+    }
+}
+
+/****************************************
+  END  palmtrees
+*****************************************/
